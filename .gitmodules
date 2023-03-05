@@ -1,0 +1,15 @@
+[submodule "submodules/SlowFast"]
+	path = submodules/SlowFast
+	url = git@github.com:facebookresearch/SlowFast.git
+[submodule "submodules/coco-caption"]
+	path = submodules/coco-caption
+	url = git@github.com:TheShadow29/coco-caption.git
+[submodule "submodules/cocoapi"]
+	path = submodules/cocoapi
+	url = git@github.com:cocodataset/cocoapi.git
+[submodule "submodules/coval"]
+	path = submodules/coval
+	url = git@github.com:TheShadow29/coval.git
+[submodule "submodules/fairseq"]
+	path = submodules/fairseq
+	url = git@github.com:TheShadow29/fairseq.git
