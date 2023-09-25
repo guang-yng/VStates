@@ -86,6 +86,11 @@ There are three main steps in setting up the dataset. See [./data/README.md]('./
         To generate cookies.txt, follow the steps below:
         + Download Get Cookies.txt extension [Chrome](https://chrome.google.com/webstore/detail/get-cookiestxt/bgaddhkoddajcdgocldbbfleckgcbcid)
         + Login to youtube.com, and use the extension to export the cookies in txt form.
+    1. **If you're having trouble downloading all the videos, you may also download the archived files through the [OneDrive LInk](https://cswashingtonedu-my.sharepoint.com/:f:/g/personal/gyang1_cs_washington_edu/EvL6LPB0RJtKj4dqPDca7OUB7wZyP3NM_tqTSWFniU5Ycw?e=o49qKi):**
+        ```
+        cat x* > vsitu_video_trimmed_dir.tar
+        tar -xvf vsitu_video_trimmed_dir.tar
+        ```
 
 
 1.  Extract the frames from the video.
@@ -96,12 +101,12 @@ There are three main steps in setting up the dataset. See [./data/README.md]('./
     python prep_data/dwn_yt.py --task_type='extract_frames'
     ```
 
-1. The processed object tracking results can be directly downloaded from [AWS S3 link](https://vidsitu-objects.s3.amazonaws.com/vsitu_objs.tar):
+1. The processed object tracking results can be directly downloaded from the [OneDrive Link](https://cswashingtonedu-my.sharepoint.com/:f:/g/personal/gyang1_cs_washington_edu/EhxQNrPcX1xAjK9SLMWxFsEBTvmO-SLKe5fqvy6lhLzeyg?e=WQUhqp).
+Download the file `vsitu_objs.tar` and move it into the directory `$ROOT/data`.
+
     ```
     export ROOT=$(pwd)
-    export OBJ_LINK="https://vidsitu-objects.s3.amazonaws.com/vsitu_objs.tar"
     cd $ROOT/data
-    wget -c $OBJ_LINK
     unzip vsitu_objs.zip -d vsitu_objs/
     rm vsitu_objs.zip
     ```
@@ -126,7 +131,7 @@ There are three main steps in setting up the dataset. See [./data/README.md]('./
     ```
 <!--->
 
-1. Download the vocabulary files from here: https://drive.google.com/file/d/1TAreioObLGKqU7M9wmnuaXh4b5s_2YdK/view?usp=sharing and place them under `data/vsitu_vocab`
+5. Download the vocabulary files from here: https://drive.google.com/file/d/1TAreioObLGKqU7M9wmnuaXh4b5s_2YdK/view?usp=sharing and place them under `data/vsitu_vocab`
     ```
     function gdrive_download () {
         CONFIRM=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate "https://docs.google.com/uc?export=download&id=$1" -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')
