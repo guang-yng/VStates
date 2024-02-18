@@ -381,7 +381,7 @@ class Learner:
             if self.cfg.task_type == "vb":
                 convert_from_caffe2 = self.cfg.sf_mdl.TRAIN.CHECKPOINT_TYPE == "caffe2"
                 ckpt_pth = self.cfg.sf_mdl.TRAIN.CHECKPOINT_FILE_PATH
-                assert Path(ckpt_pth).exists()
+                assert Path(ckpt_pth).exists(), ckpt_pth
                 if self.cfg.do_dist:
                     mdl1 = self.mdl.module.sf_mdl
                 else:

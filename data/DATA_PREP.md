@@ -107,8 +107,9 @@ Download the file `vsitu_objs.tar` and move it into the directory `$ROOT/data`.
     ```
     export ROOT=$(pwd)
     cd $ROOT/data
-    unzip vsitu_objs.zip -d vsitu_objs/
-    rm vsitu_objs.zip
+    mkdir vsitu_objs
+    tar -xvf vsitu_objs.tar -C vsitu_objs/
+    rm vsitu_objs.tar
     ```
 
 <!----/>
